@@ -1,0 +1,67 @@
+/* Etapas penduradas numa linha de transecto: vertical no celular, horizontal no desktop */
+.fc-steps {
+  position: relative;
+  display: grid;
+  row-gap: 40px;
+  padding-left: 28px;
+}
+
+.fc-steps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  width: 1px;
+  background: var(--line-strong);
+}
+
+.fc-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fc-step::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -22px;
+  width: 13px;
+  height: 1px;
+  background: var(--text-accent, var(--text-strong));
+}
+
+.fc-step p {
+  font-size: var(--fs-small);
+}
+
+@media (min-width: 901px) {
+  .fc-steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    padding-left: 0;
+  }
+
+  .fc-steps::before {
+    top: 6px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 1px;
+  }
+
+  .fc-step {
+    gap: 16px;
+    padding: 40px 16px 0 0;
+  }
+
+  .fc-step::before {
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 13px;
+  }
+}

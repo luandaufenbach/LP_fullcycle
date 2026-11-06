@@ -1,0 +1,114 @@
+.fc-faq-section {
+  row-gap: 40px;
+  align-items: start;
+}
+
+.fc-faq-section__intro {
+  gap: 20px;
+}
+
+.fc-faq-section__body {
+  gap: 32px;
+}
+
+.fc-faq {
+  border-top: 1px solid var(--line-strong);
+}
+
+.fc-faq__item {
+  border-bottom: 1px solid var(--line);
+}
+
+/* Acordeão nativo (<details name>): funciona sem JavaScript */
+.fc-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+  line-height: 1.35;
+  letter-spacing: var(--ls-title);
+  color: var(--text-strong);
+  list-style: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.fc-faq__q::-webkit-details-marker {
+  display: none;
+}
+
+.fc-faq__icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-strong);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.fc-faq__icon.fc-quadrat::after {
+  --quadrat-size: 8px;
+}
+
+.fc-faq__q:hover .fc-faq__icon {
+  background: var(--surface-sunken);
+}
+
+.fc-faq__item[open] .fc-faq__icon {
+  background: var(--solo-800);
+  color: var(--creme-50);
+}
+
+.fc-faq__item [data-icon='minus'],
+.fc-faq__item[open] [data-icon='plus'] {
+  display: none;
+}
+
+.fc-faq__item[open] [data-icon='minus'] {
+  display: block;
+}
+
+.fc-faq__a {
+  max-width: var(--measure-body);
+  padding-bottom: 24px;
+}
+
+/* Abre e fecha com animação onde o navegador suporta ::details-content */
+.fc-faq__item::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size var(--dur-slow) var(--ease-in-out),
+    content-visibility var(--dur-slow) allow-discrete;
+}
+
+.fc-faq__item[open]::details-content {
+  block-size: auto;
+}
+
+@media (min-width: 901px) {
+  .fc-faq-section__intro {
+    grid-column: 1 / span 4;
+  }
+
+  .fc-faq-section__body {
+    grid-column: 6 / span 7;
+  }
+
+  .fc-faq__q {
+    gap: 24px;
+    padding: 24px 0;
+    font-size: var(--fs-title);
+  }
+
+  .fc-faq__a {
+    padding: 0 64px 28px 0;
+  }
+}
