@@ -15,87 +15,87 @@
   }
 }
 
-/* Seletor de perfil */
-.fc-services {
-  row-gap: 24px;
-  align-items: start;
-}
-
-.fc-services__tabs {
-  display: flex;
-  flex-direction: column;
+/* Situações: cada opção leva ao grupo de serviços certo (ou direto ao WhatsApp) */
+.fc-situations {
+  display: grid;
+  column-gap: var(--grid-gap);
   border-top: 1px solid var(--line-strong);
 }
 
-.fc-services__tab {
-  display: flex;
+.fc-situation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  min-height: 56px;
-  padding: 14px 0;
-  border: 0;
+  column-gap: 16px;
+  row-gap: 4px;
+  height: 100%;
+  min-height: 72px;
+  padding: 16px 0;
   border-bottom: 1px solid var(--line);
-  background: transparent;
-  color: var(--text-muted);
-  font: inherit;
+  color: var(--text-strong);
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.fc-situation__label {
   font-size: var(--fs-title);
   font-weight: var(--fw-medium);
+  line-height: var(--lh-title);
   letter-spacing: var(--ls-title);
-  text-align: left;
-  cursor: pointer;
-  touch-action: manipulation;
-  transition:
-    color var(--dur-fast) var(--ease-out),
-    padding var(--dur-base) var(--ease-out);
 }
 
-.fc-services__tab:hover,
-.fc-services__tab[aria-selected='true'] {
-  color: var(--text-strong);
+.fc-situation__arrow {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  transition: transform var(--dur-base) var(--ease-out);
 }
 
-.fc-services__tab[aria-selected='true'] {
-  padding-left: 16px;
-  box-shadow: inset 2px 0 0 var(--solo-800);
+.fc-situation:hover .fc-situation__label {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 
-.fc-services__tab svg {
-  opacity: 0;
-  transition: opacity var(--dur-fast);
+.fc-situation:hover .fc-situation__arrow {
+  transform: translateY(2px);
 }
 
-.fc-services__tab[aria-selected='true'] svg {
-  opacity: 1;
+.fc-situation[target='_blank']:hover .fc-situation__arrow {
+  transform: translate(2px, -2px);
 }
 
-/* No celular o painel encosta nas bordas para ganhar largura de leitura */
-.fc-services__panel {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  margin: 0 calc(-1 * var(--gutter-page));
-  padding: 32px var(--gutter-page);
-  background: var(--surface-sunken);
+/* Grupos de serviços */
+.fc-service-groups {
+  margin-top: var(--section-y-l);
 }
 
-.fc-services__intro {
-  gap: 16px;
+.fc-service-group {
+  row-gap: 24px;
+  padding: 32px 0 56px;
+  border-top: 2px solid var(--text-strong);
 }
 
-.fc-services__list-wrap {
+.fc-service-group:last-child {
+  padding-bottom: 0;
+}
+
+.fc-service-group__head {
   gap: 12px;
 }
 
-.fc-services__list {
+.fc-service-group__body {
+  gap: 28px;
+}
+
+.fc-service-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   column-gap: 32px;
   border-top: 1px solid var(--line);
 }
 
-.fc-services__list li {
+.fc-service-list li {
   display: flex;
   gap: 12px;
   padding: 14px 0;
@@ -104,48 +104,54 @@
   line-height: 1.45;
 }
 
-.fc-services__list svg {
+.fc-service-list svg {
   flex: none;
   margin-top: 2px;
   color: var(--text-strong);
 }
 
-.fc-services__foot {
+.fc-service-group__foot {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: stretch;
+  gap: 12px;
 }
 
-.fc-services__note {
-  gap: 6px;
-  max-width: 360px;
-}
-
-.fc-services__note p {
-  font-size: var(--fs-small);
-  line-height: 1.5;
-  color: var(--text-strong);
+.fc-service-group__foot .fc-link {
+  align-self: flex-start;
 }
 
 @media (min-width: 641px) {
-  .fc-services__foot {
+  .fc-situations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fc-service-group__foot {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px 24px;
+    gap: 16px 32px;
+  }
+
+  .fc-service-group__foot .fc-link {
+    align-self: auto;
   }
 }
 
 @media (min-width: 901px) {
-  .fc-services__tabs {
+  .fc-situations {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .fc-service-group {
+    padding: 40px 0 80px;
+  }
+
+  .fc-service-group__head {
     grid-column: 1 / span 4;
   }
 
-  .fc-services__panel {
+  .fc-service-group__body {
     grid-column: 6 / span 7;
-    gap: 32px;
-    margin: 0;
-    padding: clamp(28px, 3.3vw, 48px);
   }
 }

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { contact } from '@/content/site';
 import { Icon } from '@/components/ui/Icon';
 
-// No topo e no contato já há botão de WhatsApp à vista; no FAQ ele cobriria os botões +/−
-const HIDDEN_ON_SECTIONS = ['inicio', 'duvidas', 'contato'];
+// Topo, serviços e contato já têm botões de WhatsApp; no FAQ ele cobriria os botões +/−
+const HIDDEN_ON_SECTIONS = ['inicio', 'servicos', 'duvidas', 'contato'];
 
 export function FloatingContact() {
   const [isVisible, setIsVisible] = useState(false);
