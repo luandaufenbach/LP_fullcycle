@@ -1,57 +1,12 @@
 .fc-hero {
-  padding-top: clamp(32px, 6.6vw, 96px);
+  padding-top: clamp(40px, 6vw, 88px);
 }
 
-/*
- * No celular o texto e a foto viram uma coluna só (display: contents) para a
- * foto da Gabriela entrar entre o texto e os botões, ainda acima da dobra.
- */
-.fc-hero__grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.fc-hero__text {
-  display: contents;
-}
-
-.fc-hero__kicker {
-  order: 1;
-}
-
-.fc-hero__title {
-  order: 2;
-}
-
-.fc-hero__lead {
-  order: 3;
-}
-
-.fc-hero__media {
-  order: 4;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-}
-
-.fc-hero__media .fc-photo__quadrat {
-  flex: none;
-  width: 64px;
-}
-
-.fc-hero__media .fc-photo__quadrat::after {
-  --quadrat-size: 8px;
-  inset: -5px;
-}
-
-.fc-hero__media .fc-photo__caption {
-  flex-direction: column;
-  gap: 4px;
+.fc-hero__content {
+  row-gap: 20px;
 }
 
 .fc-hero__actions {
-  order: 5;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -59,27 +14,20 @@
 }
 
 .fc-proof {
-  margin-top: 56px;
-  border-top: 1px solid var(--line);
+  margin-top: 48px;
+  border-block: 1px solid var(--line);
 }
 
 .fc-proof li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 0;
+  padding: 14px 0;
   border-bottom: 1px solid var(--line);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--text-strong);
 }
 
 .fc-proof li:last-child {
   border-bottom: 0;
-}
-
-.fc-tick {
-  flex: none;
-  width: 8px;
-  height: 8px;
-  background: var(--solo-800);
 }
 
 @media (min-width: 641px) {
@@ -90,56 +38,39 @@
   }
 }
 
+/* Título e botões à esquerda, texto de apoio à direita */
 @media (min-width: 901px) {
-  .fc-hero__grid {
-    display: grid;
-    align-items: end;
-    row-gap: 48px;
+  .fc-hero__content {
+    row-gap: 32px;
+    align-items: start;
   }
 
-  .fc-hero__text {
-    grid-column: 1 / span 7;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+  .fc-hero__title {
+    grid-column: 1 / span 8;
+    grid-row: 1;
+  }
+
+  .fc-hero__lead {
+    grid-column: 9 / span 4;
+    grid-row: 1 / span 2;
+    padding-top: 8px;
   }
 
   .fc-hero__actions {
+    grid-column: 1 / span 8;
+    grid-row: 2;
     margin-top: 0;
-  }
-
-  .fc-hero__media {
-    grid-column: 9 / span 4;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .fc-hero__media .fc-photo__quadrat {
-    width: auto;
-  }
-
-  .fc-hero__media .fc-photo__quadrat::after {
-    --quadrat-size: 12px;
-    inset: var(--quadrat-offset);
-  }
-
-  .fc-hero__media .fc-photo__caption {
-    flex-direction: row;
   }
 
   .fc-proof {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: clamp(56px, 6.6vw, 96px);
+    column-gap: var(--grid-gap);
+    margin-top: clamp(48px, 5vw, 72px);
   }
 
   .fc-proof li {
-    padding: 20px 24px 24px 0;
+    padding: 18px 0;
     border-bottom: 0;
-  }
-
-  .fc-proof li + li {
-    padding-left: 24px;
-    border-left: 1px solid var(--line);
   }
 }

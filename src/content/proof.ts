@@ -1,4 +1,8 @@
-export const heroProof = ['100+ projetos entregues', 'Austrália e Brasil', 'ISO 14001 e ISO 14064'];
+export const heroProof = [
+  '100+ projetos entregues',
+  '20+ anos de experiência',
+  'Engenharia e biologia na mesma equipe',
+];
 
 export const differentials = [
   {
