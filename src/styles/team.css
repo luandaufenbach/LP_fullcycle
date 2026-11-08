@@ -1,31 +1,31 @@
-/* Perfis da equipe: um embaixo do outro no celular, lado a lado no desktop */
+/* Perfis: um embaixo do outro no celular, lado a lado no desktop */
 .fc-team {
   display: grid;
-  row-gap: 56px;
+  row-gap: 48px;
 }
 
 .fc-member {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-top: 28px;
+  padding-top: 24px;
   border-top: 1px solid var(--line-strong);
 }
 
 .fc-member__head {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 20px;
 }
 
 .fc-member__head .fc-photo__quadrat {
   flex: none;
-  width: 112px;
+  width: 96px;
 }
 
 .fc-member__head .fc-photo__quadrat::after {
-  --quadrat-size: 10px;
-  inset: -6px;
+  --quadrat-size: 8px;
+  inset: -5px;
 }
 
 .fc-member__id {
@@ -36,47 +36,28 @@
 
 .fc-member__role {
   font-size: var(--fs-small);
-  font-weight: var(--fw-medium);
-  line-height: 1.4;
-  color: var(--text-strong);
+  line-height: 1.45;
 }
 
+/* Os botões ficam alinhados mesmo com textos de tamanhos diferentes */
 .fc-member__actions {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: auto;
 }
 
 .fc-member__actions .fc-link {
   align-self: flex-start;
 }
 
-/* Foto provisória: hachura com as iniciais */
+/* Foto provisória: só as iniciais */
 .fc-photo__placeholder {
   display: grid;
   place-items: center;
-  background:
-    repeating-linear-gradient(135deg, transparent 0 11px, rgb(31 29 16 / 0.06) 11px 12px),
-    var(--surface-sunken);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 40px;
+  font-size: 24px;
+  font-weight: var(--fw-medium);
   color: var(--text-muted);
-}
-
-/* Blocos de texto abaixo dos perfis */
-.fc-team-notes {
-  display: grid;
-  row-gap: 40px;
-  margin-top: var(--section-y-l);
-}
-
-.fc-team-note {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-top: 24px;
-  border-top: 2px solid var(--text-strong);
 }
 
 @media (min-width: 641px) {
@@ -93,18 +74,17 @@
 }
 
 @media (min-width: 901px) {
-  .fc-team,
-  .fc-team-notes {
+  .fc-team {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: clamp(40px, 5vw, 96px);
   }
 
   .fc-member__head .fc-photo__quadrat {
-    width: 160px;
+    width: 128px;
   }
 
   .fc-member__head .fc-photo__quadrat::after {
-    --quadrat-size: 12px;
-    inset: var(--quadrat-offset);
+    --quadrat-size: 10px;
+    inset: -6px;
   }
 }

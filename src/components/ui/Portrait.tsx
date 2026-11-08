@@ -1,23 +1,14 @@
 import Image, { type StaticImageData } from 'next/image';
-import { gabriela } from '@/content/site';
-import gabrielaPhoto from '@/assets/gabriela-gomes.png';
 
 type PortraitProps = {
   /** Valor do atributo sizes da imagem, conforme o espaço que ela ocupa */
   sizes: string;
-  preload?: boolean;
-  /** Por padrão, o retrato da Gabriela */
-  src?: StaticImageData;
-  alt?: string;
+  src: StaticImageData;
+  alt: string;
 };
 
 /** Retrato 4:5 com as marcas de canto (quadrat). */
-export function Portrait({
-  sizes,
-  preload = false,
-  src = gabrielaPhoto,
-  alt = gabriela.photoAlt,
-}: PortraitProps) {
+export function Portrait({ sizes, src, alt }: PortraitProps) {
   return (
     <div className="fc-quadrat fc-photo__quadrat">
       <div className="fc-photo__frame">
@@ -26,7 +17,6 @@ export function Portrait({
           alt={alt}
           fill
           sizes={sizes}
-          preload={preload}
           placeholder="blur"
           style={{ objectPosition: 'center 30%' }}
         />

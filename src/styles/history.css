@@ -1,0 +1,85 @@
+/* Cada pessoa tem uma cor; a fundação é a faixa escura com o lima */
+.fc-timeline__item {
+  display: grid;
+  row-gap: 8px;
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--line);
+  box-shadow: inset 2px 0 0 var(--person-color);
+}
+
+.fc-timeline__item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.fc-timeline__item[data-person='luana'] {
+  --person-color: var(--argila-500);
+}
+
+.fc-timeline__item[data-person='gabriela'] {
+  --person-color: var(--solo-800);
+}
+
+.fc-timeline__item[data-person='both'] {
+  --person-color: var(--broto-400);
+  border-bottom: 0;
+}
+
+.fc-timeline__when {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.fc-timeline__year {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-title);
+  color: var(--person-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.fc-timeline__title {
+  font-weight: var(--fw-medium);
+}
+
+.fc-timeline__text {
+  font-size: var(--fs-small);
+}
+
+.fc-history-notes {
+  display: grid;
+  row-gap: 40px;
+  margin-top: var(--stack-heading-to-content);
+}
+
+.fc-history-note {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 901px) {
+  .fc-timeline__item {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    padding: 22px 24px;
+  }
+
+  .fc-timeline__when {
+    grid-column: 1 / span 3;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .fc-timeline__title {
+    grid-column: 4 / span 4;
+  }
+
+  .fc-timeline__text {
+    grid-column: 8 / span 5;
+  }
+
+  .fc-history-notes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(40px, 5vw, 96px);
+  }
+}

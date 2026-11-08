@@ -1,4 +1,4 @@
-import { teamIntro, teamMembers, teamNotes, type TeamMember } from '@/content/team';
+import { teamIntro, teamMembers, type TeamMember } from '@/content/team';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { Button } from '@/components/ui/Button';
 import { Portrait, PortraitPlaceholder } from '@/components/ui/Portrait';
@@ -6,24 +6,13 @@ import { Heading, Label, SectionHeader } from '@/components/ui/Typography';
 
 export function Team() {
   return (
-    <section id="equipe" className="fc-section--xl fc-on-light">
+    <section id="equipe" className="fc-section fc-on-light">
       <div className="fc-container">
         <SectionHeader title="Quem conduz o seu projeto" aside={teamIntro} />
 
         <div className="fc-team">
           {teamMembers.map((member) => (
             <MemberProfile key={member.name} member={member} />
-          ))}
-        </div>
-
-        <div className="fc-team-notes">
-          {teamNotes.map((note) => (
-            <div key={note.title} className="fc-team-note">
-              <Heading level={3} size="heading">
-                {note.title}
-              </Heading>
-              <p className="fc-body">{note.text}</p>
-            </div>
           ))}
         </div>
       </div>
@@ -39,7 +28,7 @@ function MemberProfile({ member }: { member: TeamMember }) {
           <Portrait
             src={member.photo}
             alt={`${member.name}, ${member.role}`}
-            sizes="(max-width: 900px) 112px, 160px"
+            sizes="(max-width: 900px) 96px, 128px"
           />
         ) : (
           <PortraitPlaceholder name={member.name} />
