@@ -32,13 +32,11 @@
 .fc-brand__name {
   font-weight: var(--fw-semibold);
   font-size: 20px;
-  letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .fc-brand .fc-label {
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 12px;
 }
 
 .fc-nav,
@@ -87,15 +85,15 @@
 .fc-menu-sheet nav a {
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: var(--fw-medium);
   line-height: 1.2;
-  letter-spacing: -0.02em;
   color: var(--text-strong);
   text-decoration: none;
 }
 
-@media (min-width: 901px) {
+/* O menu completo só cabe a partir de 1200px; abaixo disso fica o hambúrguer */
+@media (min-width: 1200px) {
   .fc-nav {
     display: flex;
     align-items: center;
@@ -109,6 +107,7 @@
     font-weight: var(--fw-medium);
     color: var(--text-body);
     text-decoration: none;
+    white-space: nowrap;
     transition:
       color var(--dur-fast) var(--ease-out),
       border-color var(--dur-fast) var(--ease-out);

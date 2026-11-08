@@ -20,7 +20,6 @@ export const company = {
 export const gabriela = {
   name: 'Gabriela Gomes',
   role: 'Bióloga e consultora ambiental',
-  photoAlt: 'Gabriela Gomes, bióloga e consultora ambiental da Full Cycle',
 };
 
 export const contact = {
@@ -34,8 +33,9 @@ export const contact = {
 
 export const navItems = [
   { label: 'Serviços', href: '#servicos' },
-  { label: 'Como funciona', href: '#como-funciona' },
-  { label: 'Sobre', href: '#sobre' },
+  { label: 'Como trabalhamos', href: '#como-funciona' },
+  { label: 'Equipe', href: '#equipe' },
+  { label: 'Para quem trabalhamos', href: '#clientes' },
   { label: 'Dúvidas', href: '#duvidas' },
   { label: 'Contato', href: '#contato' },
 ] as const;

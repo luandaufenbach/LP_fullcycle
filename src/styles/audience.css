@@ -1,0 +1,53 @@
+/* Tabela de filetes: fase do projeto à esquerda, como apoiamos à direita */
+.fc-phases__head {
+  display: none;
+}
+
+.fc-phases {
+  border-top: 1px solid var(--line-strong);
+}
+
+.fc-phase {
+  display: grid;
+  row-gap: 8px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fc-phase__name {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-title);
+  color: var(--text-strong);
+}
+
+.fc-phase__support {
+  font-size: var(--fs-small);
+}
+
+@media (min-width: 901px) {
+  .fc-phases__head,
+  .fc-phase {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+  }
+
+  .fc-phases__head {
+    display: grid;
+    padding-bottom: 12px;
+  }
+
+  .fc-phases__head > :first-child,
+  .fc-phase__name {
+    grid-column: 1 / span 4;
+  }
+
+  .fc-phases__head > :last-child,
+  .fc-phase__support {
+    grid-column: 6 / span 7;
+  }
+
+  .fc-phase {
+    padding: 24px 0;
+  }
+}

@@ -7,7 +7,7 @@ import { Icon } from '@/components/ui/Icon';
 import { cn } from '@/lib/cn';
 import { Brand } from './Brand';
 
-const DESKTOP_QUERY = '(min-width: 901px)';
+const DESKTOP_QUERY = '(min-width: 1200px)';
 
 // Com o menu aberto, o resto da página sai da ordem de foco e do leitor de tela
 function setPageInert(inert: boolean) {
