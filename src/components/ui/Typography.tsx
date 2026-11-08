@@ -9,7 +9,6 @@ type HeadingProps = {
   children: ReactNode;
 };
 
-/** Título em Manrope. Use no máximo um <em> por título para o destaque em serifa. */
 export function Heading({ level = 2, size = 'l', id, className, children }: HeadingProps) {
   const Tag = `h${level}` as const;
   return (
@@ -27,7 +26,7 @@ type LabelProps = {
   children: ReactNode;
 };
 
-/** Rótulo em Barlow Condensed caixa-alta, para dados, legendas e microgarantias. */
+/** Texto pequeno de apoio: dados, legendas e nomes. */
 export function Label({
   as: Tag = 'span',
   tone = 'muted',
@@ -50,12 +49,12 @@ export function Label({
 }
 
 type SectionHeaderProps = {
-  title: ReactNode;
-  aside?: ReactNode;
+  title: string;
+  aside?: string;
   id?: string;
 };
 
-/** Cabeçalho dividido: título nas colunas 1–7 e texto de apoio nas 9–12. */
+/** Cabeçalho de seção: título à esquerda e texto de apoio à direita. */
 export function SectionHeader({ title, aside, id }: SectionHeaderProps) {
   return (
     <div className="fc-grid fc-split">

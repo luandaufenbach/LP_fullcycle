@@ -42,7 +42,6 @@ export function Button({
         'fc-btn',
         `fc-btn--${variant}`,
         size !== 'md' && `fc-btn--${size}`,
-        variant === 'outline' && 'fc-quadrat',
         block && 'fc-btn--block',
         className,
       )}

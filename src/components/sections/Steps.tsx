@@ -6,11 +6,7 @@ export function Steps() {
     <section id="como-funciona" className="fc-section fc-on-dark">
       <div className="fc-container">
         <SectionHeader
-          title={
-            <>
-              O ciclo <em>completo</em>, etapa por etapa
-            </>
-          }
+          title="O ciclo completo, etapa por etapa"
           aside="Um processo claro para você saber o que acontece em cada fase do projeto."
         />
         <ol className="fc-steps">

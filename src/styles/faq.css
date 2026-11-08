@@ -29,7 +29,6 @@
   font-size: 18px;
   font-weight: var(--fw-medium);
   line-height: 1.35;
-  letter-spacing: var(--ls-title);
   color: var(--text-strong);
   list-style: none;
   cursor: pointer;
@@ -45,25 +44,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   color: var(--text-strong);
-  transition:
-    background-color var(--dur-fast) var(--ease-out),
-    color var(--dur-fast) var(--ease-out);
-}
-
-.fc-faq__icon.fc-quadrat::after {
-  --quadrat-size: 8px;
-}
-
-.fc-faq__q:hover .fc-faq__icon {
-  background: var(--surface-sunken);
-}
-
-.fc-faq__item[open] .fc-faq__icon {
-  background: var(--solo-800);
-  color: var(--creme-50);
 }
 
 .fc-faq__item [data-icon='minus'],

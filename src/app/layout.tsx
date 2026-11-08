@@ -1,24 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import { Barlow_Condensed, Instrument_Serif, Manrope } from 'next/font/google';
+import localFont from 'next/font/local';
 import { company, siteUrl } from '@/content/site';
 import './globals.css';
 
-const manrope = Manrope({
-  subsets: ['latin'],
+const manrope = localFont({
+  src: '../assets/fonts/manrope-latin.woff2',
+  weight: '200 800',
   variable: '--font-manrope',
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  style: 'italic',
-  variable: '--font-instrument-serif',
-});
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ['latin'],
-  weight: ['500', '600'],
-  variable: '--font-barlow-condensed',
 });
 
 const title = 'Full Cycle | Consultoria Ambiental e Restauração Ecológica em SC';
@@ -46,10 +34,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${manrope.variable} ${instrumentSerif.variable} ${barlowCondensed.variable}`}
-    >
+    <html lang="pt-BR" className={manrope.variable}>
       <body>{children}</body>
     </html>
   );

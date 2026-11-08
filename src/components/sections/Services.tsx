@@ -10,11 +10,7 @@ export function Services() {
     <section id="servicos" className="fc-section fc-on-light">
       <div className="fc-container">
         <SectionHeader
-          title={
-            <>
-              Qual é a <em>sua situação</em>?
-            </>
-          }
+          title="Qual é a sua situação?"
           aside="Escolha a opção mais parecida com o seu caso e veja os serviços certos para ele."
         />
 
@@ -40,8 +36,8 @@ export function Services() {
         </ul>
 
         <div className="fc-service-groups">
-          {serviceGroups.map((group, index) => (
-            <ServiceGroupBlock key={group.id} group={group} number={index + 1} />
+          {serviceGroups.map((group) => (
+            <ServiceGroupBlock key={group.id} group={group} />
           ))}
         </div>
       </div>
@@ -49,15 +45,12 @@ export function Services() {
   );
 }
 
-function ServiceGroupBlock({ group, number }: { group: ServiceGroup; number: number }) {
+function ServiceGroupBlock({ group }: { group: ServiceGroup }) {
   return (
     <article id={group.id} className="fc-grid fc-service-group">
-      <div className="fc-stack fc-service-group__head">
-        <Label tone="strong">{String(number).padStart(2, '0')}</Label>
-        <Heading level={3} size="m">
-          {group.title}
-        </Heading>
-      </div>
+      <Heading level={3} size="m" className="fc-service-group__title">
+        {group.title}
+      </Heading>
 
       <div className="fc-stack fc-service-group__body">
         <ul className="fc-service-list">

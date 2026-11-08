@@ -79,17 +79,17 @@ export const serviceGroups: ServiceGroup[] = [
 export const situations: Situation[] = [
   {
     label: 'Vou construir ou lotear',
-    destination: 'Licenciamento · viabilidade, LAP/LAI, EAS',
+    destination: 'Licenciamento: viabilidade, LAP/LAI, EAS',
     href: '#licenciamento',
   },
   {
     label: 'Licença do meu negócio',
-    destination: 'Licenciamento · LAO, AuA, renovação, LAO corretiva',
+    destination: 'Licenciamento: LAO, AuA, renovação, LAO corretiva',
     href: '#licenciamento',
   },
   {
     label: 'Imóvel rural',
-    destination: 'Licenciamento · CAR e regularização rural',
+    destination: 'Licenciamento: CAR e regularização rural',
     href: '#licenciamento',
   },
   {

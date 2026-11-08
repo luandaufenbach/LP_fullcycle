@@ -19,7 +19,7 @@ export function Faq() {
               <details key={item.question} name="faq" className="fc-faq__item" open={index === 0}>
                 <summary className="fc-faq__q">
                   <span>{item.question}</span>
-                  <span className="fc-faq__icon fc-quadrat" aria-hidden="true">
+                  <span className="fc-faq__icon" aria-hidden="true">
                     <Icon name="plus" />
                     <Icon name="minus" />
                   </span>
