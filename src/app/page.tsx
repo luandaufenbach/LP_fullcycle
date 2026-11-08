@@ -1,7 +1,7 @@
 import { FloatingContact } from '@/components/layout/FloatingContact';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { SiteHeader } from '@/components/layout/SiteHeader';
-import { About } from '@/components/sections/About';
+import { Team } from '@/components/sections/Team';
 import { Contact } from '@/components/sections/Contact';
 import { Credibility } from '@/components/sections/Credibility';
 import { Differentials } from '@/components/sections/Differentials';
@@ -24,7 +24,7 @@ export default function Home() {
         <Hero />
         <Services />
         <Steps />
-        <About />
+        <Team />
         <Differentials />
         <Credibility />
         <Faq />
