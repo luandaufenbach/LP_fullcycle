@@ -1,9 +1,11 @@
-/* Faixa final de contato */
-.fc-cta__inner {
-  display: flex;
-  flex-direction: column;
+/* Faixa final: título à esquerda, texto e botões à direita, garantias embaixo */
+.fc-cta {
+  row-gap: 20px;
+  align-items: start;
+}
+
+.fc-cta__body {
   gap: 24px;
-  max-width: 900px;
 }
 
 .fc-cta__actions {
@@ -15,44 +17,29 @@
 .fc-cta__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  padding-top: 24px;
+  gap: 8px 32px;
+  margin-top: var(--stack-heading-to-content);
+  padding-top: 20px;
   border-top: 1px solid var(--line);
-}
-
-/* Assinatura com foto pequena (quem atende) */
-.fc-byline {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.fc-byline .fc-photo__quadrat {
-  flex: none;
-  width: 56px;
-  color: var(--line-strong);
-}
-
-.fc-byline .fc-photo__quadrat::after {
-  --quadrat-size: 8px;
-  inset: -5px;
-}
-
-.fc-byline__text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  font-size: var(--fs-small);
 }
 
 @media (min-width: 641px) {
-  .fc-cta__inner {
-    gap: 32px;
-  }
-
   .fc-cta__actions {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 12px 16px;
+  }
+}
+
+@media (min-width: 901px) {
+  .fc-cta__title {
+    grid-column: 1 / span 6;
+  }
+
+  .fc-cta__body {
+    grid-column: 8 / span 5;
+    padding-top: 8px;
   }
 }
 
