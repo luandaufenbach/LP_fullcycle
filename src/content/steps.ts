@@ -1,18 +1,22 @@
 export const processSteps = [
   {
     title: 'Conversa inicial',
-    text: 'Entendemos a área, o objetivo do projeto, os prazos e as exigências envolvidas.',
+    text: 'Entendemos sua necessidade e analisamos os documentos do imóvel, da atividade ou da empresa. A primeira orientação é sem custo.',
   },
   {
     title: 'Diagnóstico',
-    text: 'Visita de campo e levantamento de dados para conhecer o ecossistema e a legislação aplicável.',
+    text: 'Fazemos a vistoria técnica e o levantamento de dados para identificar exigências legais, restrições e riscos.',
   },
   {
-    title: 'Plano e licenciamento',
-    text: 'Elaboração dos estudos e relatórios técnicos e acompanhamento junto aos órgãos ambientais.',
+    title: 'Proposta e planejamento',
+    text: 'Apresentamos o escopo, as responsabilidades de cada parte, os prazos e o investimento, separados por etapa.',
   },
   {
-    title: 'Execução e monitoramento',
-    text: 'Implantação da restauração e acompanhamento dos resultados ao longo do tempo.',
+    title: 'Execução',
+    text: 'Elaboramos os estudos, projetos, laudos e programas, conduzimos os processos junto aos órgãos competentes e respondemos às exigências técnicas.',
+  },
+  {
+    title: 'Acompanhamento',
+    text: 'Cuidamos do monitoramento, das condicionantes, das renovações e das atualizações, para que sua empresa ou projeto continue regular depois da aprovação.',
   },
 ];

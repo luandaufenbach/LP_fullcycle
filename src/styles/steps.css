@@ -39,7 +39,9 @@
 
 @media (min-width: 901px) {
   .fc-steps {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* Uma coluna por etapa, seja qual for a quantidade */
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
     column-gap: var(--grid-gap);
     padding-left: 0;
   }
@@ -55,7 +57,12 @@
 
   .fc-step {
     gap: 16px;
-    padding: 40px 16px 0 0;
+    padding-top: 40px;
+  }
+
+  /* Com 5 colunas, o tamanho padrão faria "Acompanhamento" estourar */
+  .fc-step .fc-h {
+    font-size: var(--fs-title);
   }
 
   .fc-step::before {
